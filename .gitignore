@@ -1,0 +1,6 @@
+.env
+port/config.py
+instance/
+__pycache__/
+*.pyc
+venv/
