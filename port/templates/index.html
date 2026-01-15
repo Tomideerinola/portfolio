@@ -1,458 +1,828 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js" >
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="My Portfolio">
-	<meta name="description" content="About The best developer in the World">
-  <meta name="twitter:title" content="title on x">
-  <meta property="og:title" content="The page title in facebook">
-	<title> Tomide Portfolio </title>
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
-  <link rel="icon"  type="image/ico" href="images/mico.ico"> 
-	<style>
-	 /*div{ border: 1px solid red; min-height: 100px;*/
-	 	
-	 .il1{width:170px;
-	 	height: 100px;}
-	 .myname{ font-size:30px;
-	 			color:blue; font-family:algerian; }
-	 .des{color:white;}
-	 .mybg{background-color: #AFD2E9; }
-	 .pabout{font-size:20px; font-family:arial;}
-	 .habout{font-size: 40px;  font-family:algerian;}
-	 .carm1{position:absolute; top:480px; height:130px; background-color: rgba(255, 255, 255, 0.0);}
-	 .wel1{font-size:50px;  font-family:algerian; color:white;}
-	 .welp{font-size:30px;  font-family:"agency fb"; color:black;}
-	 .foot1{background-color: #AFD2E9;}
-	 .ulsm{list-style-type: none; text-decoration: none;}
-	 .amy{text-decoration: none; color:black; font-size: 15px;}
-	 .fbac1{background-image: url('images/fban.jpg'); background-repeat: no-repeat;  background-position:top; background-size: cover; }
-	 /*.imel1{height:400px; }*/
-   .hbac{background-image: url('images/contact.jpg'); background-repeat: no-repeat;  background-position:top; background-size: cover;}
-   .texta1{height:80px; width:100%}
-   .git1{ font-family:algerian; }
-   .prog1{width:400px;}
 
-	</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tomide </title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/vendor.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='images/myico.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='images/mico.ico')}}">
+    <link rel="manifest" href="site.webmanifest"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+    .s-intro__cta {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+@keyframes modalFadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+        #contactModal > div { flex-direction: column; width: 95%; height: 90vh; overflow-y: auto; }
+        .modal-sidebar { width: 100% !important; padding: 2rem !important; }
+        .modal-form-side { width: 100% !important; padding: 2rem !important; }
+    }
+    .modal-sidebar a:hover {
+    opacity: 0.8;
+    transform: translateX(5px);
+}
+
+
+/* Desktop and General Styles */
+@media (max-width: 768px) {
+        #contactModal {
+            align-items: flex-start !important; /* Start at top for scrolling */
+            padding: 10px !important;
+        }
+
+        .modal-box {
+            flex-direction: column !important;
+            height: auto !important;
+        }
+
+        .modal-sidebar {
+            width: 100% !important;
+            padding: 3rem 2rem !important;
+        }
+
+        .modal-form-side {
+            width: 100% !important;
+            padding: 3rem 2rem !important;
+        }
+
+        .form-grid {
+            grid-template-columns: 1fr !important; /* Stack name/email on mobile */
+        }
+    }
+
+</style>
 </head>
-<body>
-	<!-- Container -->
-<div class="container-fluid">
-
-<!-- header -->
-	<div class="row ">
-		<div class="col-md-12 shadow ">
-			<nav class="navbar navbar-expand-lg mybg fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand myname" href="#"><b> Tomide</b><span class="des">/></span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#melly">About Tomide</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#phe1">Projects</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            My Services
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#ecom">E-commerce</a></li>
-            <li><a class="dropdown-item" href="#ecom">Fin-tech</a></li>
-            <li><a class="dropdown-item" href="#ecom">Personal</a></li>
-            <li><a class="dropdown-item" href="#ecom">Restaurant</a></li>
 
 
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#ddm1">Custom</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <button type="button" class=" btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal" aria-disabled="true">Contact Me </button>
-        </li>
-      </ul>
-      
-    </div>
-  </div>
-</nav>
+<body id="top">
 
-
-		 </div>
-
- 	</div>
-
-<!-- carousel -->
-	<div class="row"> 
-
-		<div class="col-md-12"> 
-				<div id="carouselExampleCaptions" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/car3.jpg" class="d-block w-100 img-fluid" alt="banner">
-      <div class="carousel-caption d-none d-md-block carm1">
-        <h5 class="wel1"> Welcome To Tomide's Hub</h5>
-        <p class="welp">  I am Tomide Erinola, a Fullstack Developer with the Aim to turn Your Vision to Visual Reality </p>
-        <button class="btn btn-success" data-bs-toggle="modal"  > Download Resume</button>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#2Modal">
- Hire Me
-</button>
-
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="images/car4.jpg" class="d-block w-100 img-fluid" alt="...">
-      <div class="carousel-caption d-none d-md-block carm1">
-       <h5 class="wel1"> Welcome To Tomide's Hub</h5>
-        <p  class="welp" >I am Tomide Erinola, a Fullstack Developer with the Aim to turn Your Vision to Visual Reality</p>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#2Modal" > Hire Me </button>
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#2Modal" > Download Resume</button>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="images/car4.jpg" class="d-block w-100 img-fluid" alt="...">
-      <div class="carousel-caption d-none d-md-block carm1">
-        <h5 class="wel1"> Welcome To Tomide's Hub</h5>
-        <p class="welp" >I am Tomide Erinola, a Fullstack Developer with the Aim to turn Your Vision to Visual Reality</p>
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#2Modal" > Download Resume</button>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#secondeModal" > Hire Me </button>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-
-
-		</div>
-
- 	</div>
-
- 	<!-- about me text-->
- 	<div class="row"> 
- 		<div class="col-md-12 text-center text-primary mb-4 mt-3" id="melly"> <h2 class="habout"> About Me  </h2></div>
- 		<div class="col-md-2"> <img src="images/me.jpeg" class="img-fluid rounded-circle">
- 											
- 		 </div>
- 		<div class="col-md-7 d-flex align-items-center offset-md-1"> <p class='pabout text-center '> I am Tomide Erinola. I build beautiful, User friendly web applications using my God given skills and over a decade of Expertise.I am passionate about creating functional website to your comfortabilty.</p>  <br> 
-     
-    </div>
-
- 	</div>
-
- 	<!-- whatido -->
- 	
-
- 	<!-- projects text -->
-
- 	<div class="row"> 
- 		<div class="col-md-12 text-center text-primary mt-5 mb-4"> 
- 			<h2 class="habout" id="phe1">Projects  </h2>
- 		 </div>
- 	</div>
- 	<!-- preject cards -->
- 	<div class="row justify-content-center mb-5" id="pro1"> 
-
-
- 		 <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="images/pro2.png" class="card-img-top" alt="Pro1" >
-          <div class="card-body">
-            <p class="card-text"><b>First Project</b></p>
-            <p>  Corporate Website</p>
-          </div>
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="images/pro1.png" class="card-img-top" alt="pro2" >
-          <div class="card-body">
-            <p class="card-text"><b>Second Project</b></p>
-            <p>NGO Website  </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4" id="ecom">
-        <div class="card shadow">
-          <img src="images/pro3.png" class="card-img-top" alt="Pro3">
-          <div class="card-body">
-            <p class="card-text"><b>Third Project</b></p>
-            <p> E-Commerce Website </p>
-          </div>
-        </div>
-      </div>
- 	</div>
-
- 	<!-- getintouch -->
-
- 	<div class="row"> 
- 		<div class="col-md-12 text-center text-primary mt-5 mb-5"> <h2 class="habout"> Skills </h2> </div>
- 	</div>
-
- 	<!-- skills -->
-
- 	<div class="row"> 
- 		<div class="col-md-12 d-flex flex-column justify-content-center align-items-center"> 
-
- 			<div class="progress mb-3 prog1" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-  <div class="progress-bar text-bg-success" style="width: 85%"><b> HTML</b></div>
-</div>
-<div class="progress mb-3 prog1" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-  <div class="progress-bar text-bg-info" style="width: 100%"><b>CSS</b></div>
-</div>
-<div class="progress mb-3 prog1" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-  <div class="progress-bar text-bg-warning" style="width: 95%"><b> Javascript </b></div>
-</div>
-<div class="progress mb-3 prog1" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-  <div class="progress-bar text-bg-danger" style="width: 70%"> <b>Python</b></div>
-</div>
-
-
-
- 		 </div>
- 	</div>
- 	<!-- faq -->
-
- 	<div class="row mt-5"> 
- 		<div class="col-md-12 text-center text-primary mb-5"> <h2 class="habout">FAQ's </h2> </div>
-
- 	</div>
-
- 	<!-- questions -->
- 	<div class="row"> 
- 		<div class="col-md-12"> 
-
- 				<div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-       <b>  Will your website work on all browser? </b>
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-       Absolutely! All websites I build are responsive and compatible with all modern browsers and devices. Contact Me ASAP!
-      </div>
     </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-       <b>  Modes Of Payment Accepted </b>
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        I accept various payment methods including bank transfer, PayPal, Zelle, Crypto, and more. We can discuss better about other options. Send a Message!
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-      <b>   How Soon can i get your Project done? </b>
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-      It depends on the type of website you want, Any of the website listed on my page could be completed within 5 days while a fin tech Web application could be done in Two weeks. Shoot a text! 
-      </div>
-    </div>
-  </div>
-
-
-  		 <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-       <b>   Can you Match my Brand color and Style </b>
-      </button>
-    </h2>
-    <div id="collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-       Yes, absolutely. Text Me!
-      </div>
-    </div>
-  </div>
-
-
-</div>
 
 
 
-
- 		 </div>
-
- 	</div>
-
-<!-- getintouch -->
-<div class="row"> 
-	<div class="col-md-12 text-center text-primary"> 
-			<h2 class="habout mt-5 mb-5"> Get in touch With Tomide </h2>
-	</div>
-
-</div>
-<!-- socials -->
-<div class="row fbac1"> 
-	<div class="col-md-12 text-center text-primary mb-3 git1"> <b> Let's make something Great, Beautiful and Timeless </b></div>
-	<div class="col-md-5 offset-1">
-	  <p> You can contact me on: </p>
-	  <ul class="ulsm">
-	  		<li class="mb-3"><i class="fa-solid fa-phone"  style="font-size:20px;"></i>  <a class="amy" href="https://x.com/tomide1604?s=21"> 09078347881, 07039853440</a> </li>
-        <li  class="mb-3"><i class="fa-brands fa-at" style="font-size:20px;"></i><a class="amy" href="gmail.com">   MichealErinola9@gmail.com</a> </li>
-	  		<li  class="mb-3">   <i class="fa-brands fa-facebook"  style="font-size:20px;"></i><a class=" amy" href="https://www.facebook.com/erinola.micheal.3?mibextid=LQQJ4d"> Tomide Erinola</a> </li>
-	  		<li  class="mb-3"> <i class="fa-brands fa-x-twitter"  style="font-size:20px;"></i><a class="amy" href="https://x.com/tomide1604?s=21"> Tomide1604 </a> </li>
-	  		<li  class="mb-3"> <i class="fa-brands fa-instagram"  style="font-size:20px;"></i> <a class="amy" href=" ">Tomide___</a> </li>
-	  		<li  class="mb-3"><i class="fa-brands fa-telegram" style="font-size:20px;"></i><a class="amy" href=""></a> 09078347881 </li>
-	  		<li  class="mb-4"><i class="fa-brands fa-github" style="font-size:20px;"></i><a class="amy" href="">  Tomide</a> </li>
+    <div id="page" class="s-pagewrap ss-home">
 
 
 
+        <header class="s-header">
 
+            <div class="row s-header__inner width-sixteen-col">
 
-	   </ul>
-	</div>
-	<div class="col-md-5"> 
-    <h2 class="text-dark"> Send a Quick Message </h2>
-      <form>
-  <div class="mb-3">
-    <input type="text" class="form-control" placeholder="Your Name">
-  </div>
-  <div class="mb-3">
-    <input type="email" class="form-control" placeholder="Your Email">
-  </div>
-  <div class="mb-3">
-    <textarea class="form-control texta1"  placeholder="Your Message"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Send</button>
-</form>
+                <div class="s-header__block">
+                    <div class="s-header__logo">
+                        <a class="myname" href="#"><b style="color: white; font-family:algerian; font-size:30px;"> Tomide</b><span class="">/></span></a>
 
+                    </div>
 
-   </div>
+                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+                </div> <!-- end s-header__block -->
 
+                <nav class="s-header__nav">
+    
+                    <ul class="s-header__menu-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#project">Project</a></li>
+                        <!-- <li><a href="#contact">Services</a></li> -->
+                        <li><a href="#faq">Faq's</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul> <!-- s-header__menu-links -->
 
-</div>
-<!-- footer -->
-<div class="row foot1"> 
+                    <div class="s-header__contact">
+                        <a href="javascript:void(0)" onclick="toggleModal()" class="btn btn--primary">
+                            Let's Work </a>                        
+                    </div> <!-- s-header__contact -->
+    
+                </nav> <!-- end s-header__nav -->
 
-	<div class="col-md-12 text-center"> 
-		<p> <b> Copyright &copy2025 Tomide Erinola </b> </p>
-	 </div>
+            </div> <!-- end s-header__inner -->
 
-</div>
-
-
-
-
+        </header> <!-- end s-header -->
 
 
 
+        <section id="content" class="s-content">
 
+            <section id="intro" class="s-intro">
 
+                <div class="row s-intro__content width-sixteen-col">
 
+                    <div class="column lg-12 s-intro__content-inner grid-block">
+                        
+                        <div class="s-intro__content-text">
+                            <div class="s-intro__content-pretitle text-pretitle">Hello, I'm Tomide</div>
+                            <h1 class="s-intro__content-title">
+                            Full-Stack Python Developer <br>
+                            focused on building clean, <br>
+                            reliable, and scalable <br>
+                            web applications.
+                            </h1>
+                            <div class="s-intro__cta">
+                                <a href="javascript:void(0)" onclick="toggleModal()" class="btn btn--primary">
+                                    Hire Me
+                                </a>
+                        
+                                <a href="{{ url_for('static', filename='resume/Tomide_Micheal_Erinola_Resume.pdf') }}"
+                                   class="btn btn-warning" target="_blank"
+                                   >
+                                    Download Resume
+                                </a>
+                            </div>
+                        </div> <!-- s-intro__content-text -->
 
+                        <div class="s-intro__content-media"> 
+                            <div class="s-intro__content-media-inner">                               
+                                <img src="{{url_for('static', filename='images/me2.jpg')}}" srcset="{{url_for('static', filename='images/me2.jpg')}} 1x, {{url_for('static', filename='images/me2.jpg')}} 2x" alt="">
+                                <div class="lines">                               
+                                    <span></span>                                  
+                                </div>
+                            </div>
+                        </div> <!-- s-intro__content-media -->                      
+<!-- 
+                        <div class="s-intro__scroll-down">
+                            <a href="#about" class="smoothscroll">
+                                <div class="scroll-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#97b34a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;<polyline points="7 13 12 18 17 13"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
+                                </div>
+                                <span>Scroll for more</span>
+                            </a>
+                        </div> s-intro__scroll-down -->
+                        
+                    </div> <!-- s-intro__content-inner -->
 
+                </div> <!-- s-intro__content -->
 
-</div>
-<!-- firstmodal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true ">
-  <div class="modal-dialog " >
-    <div class="modal-content fbac1">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">You Can Contact me Through the Following </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
- <ul class="ulsm">
-	  		<li class="mb-3"><i class="fa-solid fa-phone"  style="font-size:20px;"></i>  <a class="amy" href=""> 09078347881, 07039853440</a> </li>
-        <li  class="mb-3"><i class="fa-brands fa-at" style="font-size:20px;"></i><a class="amy" href="">  MichealErinola9@gmail.com</a> </li>
-	  		<li  class="mb-3">   <i class="fa-brands fa-facebook"  style="font-size:20px;"></i><a class=" amy" href=""> Tomide Erinola</a> </li>
-	  		<li  class="mb-3"><a class="amy" href=""> <i class="fa-brands fa-x-twitter"  style="font-size:20px;"></i> Tomide1604 </a> </li>
-	  		<li  class="mb-3"><a class="amy" href=" "><i class="fa-brands fa-instagram"  style="font-size:20px;"></i> Tomide___</a> </li>
-	  		<li  class="mb-3"><i class="fa-brands fa-telegram" style="font-size:20px;"></i><a class="amy" href=""></a> 09078347881 </li>
-	  		<li  class="mb-4"><i class="fa-brands fa-github" style="font-size:20px;"></i><a class="amy" href="">  Tomide</a> </li>
-        <li  class="mb-4"><i class="fa-brands fa-at" style="font-size:20px;"></i><a class="amy" href="">  Email</a> </li>
+            </section> <!-- end s-intro -->
 
+            <!-- about
+            ----------------------------------------------- -->
+            <section id="about" class="s-about target-section">
 
+                <div class="row s-about__content width-sixteen-col">
+                    <div class="column grid-block grid-section-split">
 
+                        <img src="{{url_for('static', filename='images/geometric_shape.svg')}}" alt="" class="s-about__content-imgbg">
 
-	   </ul>
-      </div>
-      <div class="modal-footer">
-       
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+                        <div class="section-header grid-section-split__header">
+                            <div class="text-pretitle">About</div>                           
+                            <h2 class="text-display-title">
+                              My Aim is to turn Your Vision to Visual Reality
+                            </h2>                           
+                        </div> <!-- end section-header -->
 
+                        <div class="s-about__content-main grid-section-split__primary">
+                            <p class="attention-getter">
+                                I’m Tomide Erinola, a Full-Stack Python Developer passionate about building
+                                functional, scalable web applications that solve real-world problems.
+                                I focus on writing clean, maintainable code and developing systems that
+                                are easy to understand and extend.
+                            </p>
+                        
+                            <p class="attention-getter">
+                                My primary stack includes Python and Flask on the backend, where I design
+                                RESTful APIs, handle authentication, and manage application logic. On the
+                                frontend, I work with HTML, CSS, JavaScript, and React.js to build responsive,
+                                interactive user interfaces that provide smooth user experiences.
+                            </p>
+                        
+                            <p class="attention-getter">
+                                I have experience working with both SQL and NoSQL databases, including
+                                SQLite, PostgreSQL, and MongoDB, allowing me to choose the right data
+                                storage solution for different types of applications. I also work with
+                                Git and GitHub for version control and enjoy deploying applications to
+                                production environments.
+                            </p>
+                        </div> <!-- end s-about__content-main -->
 
-<!-- secondmodal -->
+                        <div class="s-about__content-btn grid-section-split__bottom">
+                            <!-- <a href="about.html" class="btn btn--stroke u-fullwidth">More About Me</a> -->
 
-<div class="modal fade " id="2Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog ">
-    <div class="modal-content hbac" id="ddm1">
-      <div class="modal-header ">
-        <h1 class="modal-title fs-5" id="2ModalLabel"> <b> Send A Message </b> </h1>
-         <ul class="ulsm d-flex justify-content-end">
-        <li class="mb-3 p-2"> <a class="amy" href="https://x.com/tomide1604?s=21"><i class="fa-solid fa-phone"  style="font-size:20px;"></i>  </a> </li>
-        <li  class="mb-3 p-2"><a class="amy" href=""><i class="fa-brands fa-at" style="font-size:20px;"></i></a> </li>
-        <li  class="mb-3 p-2">  <a class=" amy" href="https://www.facebook.com/erinola.micheal.3?mibextid=LQQJ4d">  <i class="fa-brands fa-facebook"  style="font-size:20px;"></i> </a> </li>
-        <li  class="mb-3 p-2"> <a class="amy" href="https://x.com/tomide1604?s=21"> <i class="fa-brands fa-x-twitter"  style="font-size:20px;"></i> </a> </li>
-        <li  class="mb-3 p-2">  <a class="amy" href=" "> <i class="fa-brands fa-instagram"  style="font-size:20px;"></i></a> </li>
-        <li  class="mb-3 p-2"><a class="amy" href=""> <i class="fa-brands fa-telegram" style="font-size:20px;"></i></a>  </li>
-        <li  class="mb-3 p-2"><a class="amy" href=""> <i class="fa-brands fa-github" style="font-size:20px;"></i>  </a> </li>
+                            <ul class="s-about__social social-list">
+                                <li>
+                                    <a href="https://www.facebook.com/share/17bXTCEqex/?mibextid=wwXIfr" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
+                                        <span class="u-screen-reader-text">Facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/Tomide1604" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
+                                        <span class="u-screen-reader-text">Twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/tomide___/?hl=en" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
+                                        <span class="u-screen-reader-text">Instagram</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/tomideerinola" target="_blank" aria-label="GitHub">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0.297c-6.627 0-12 5.373-12 12 0 5.303 
+                                                     3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 
+                                                     0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
+                                                     -.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 
+                                                     1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997 
+                                                     .108-.775.418-1.305.762-1.605-2.665-.305-5.467-1.332-5.467-5.931 
+                                                     0-1.31.469-2.381 1.235-3.221-.123-.303-.535-1.523.117-3.176 
+                                                     0 0 1.008-.322 3.3 1.23a11.53 11.53 0 013.003-.404c1.018.005 2.043.137 3.003.404 
+                                                     2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.119 3.176 
+                                                     .77.84 1.233 1.911 1.233 3.221 0 4.609-2.807 5.624-5.479 5.921 
+                                                     .43.372.823 1.102.823 2.222 0 1.606-.014 2.896-.014 3.286 
+                                                     0 .321.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul> <!-- end s-footer__social -->
+                        </div> <!-- end s-about__content-btn -->
+                    
+                    </div> <!-- content-inner -->
+                </div>
+                
+            </section> <!-- end s-about -->
 
+            <!-- expertise
+            ----------------------------------------------- -->
+            <section id="expertise" class="s-expertise">
 
+                <div class="row s-projects__content width-sixteen-col" id="project" style="padding-bottom: 10rem;">
+                    <div class="column xl-12">
+                
+                        <div class="section-header text-center" style="margin-bottom: 8rem;">
+                            <div class="text-pretitle">Selected Work</div>
+                            <h2 class="text-display-title">Featured Projects</h2>
+                            <p class="lead" style="max-width: 700px; margin: 0 auto; color: #666;">
+                                A showcase of architected solutions specializing in scalable web applications and logistics systems.
+                            </p>
+                        </div>
+                
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem;">
+                
+                            <div class="project-card-wrapper" style="perspective: 1000px;">
+                                <div style="background: #ffffff; border-radius: 20px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid #eee; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-15px)'" onmouseout="this.style.transform='translateY(0)'">
+                                    
+                                    <div style="height: 240px; position: relative; overflow: hidden;">
+                                        <img src="{{url_for('static', filename='images/quicklet.jpg')}}" alt="Quicklet" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); color: white; padding: 5px 12px; border-radius: 50px; font-size: 1.1rem; font-weight: 600;">Real Estate</div>
+                                    </div>
+                
+                                    <div style="padding: 3rem; flex-grow: 1; display: flex; flex-direction: column;">
+                                        <h3 style="margin: 0 0 1.5rem 0; font-size: 2.2rem; color: #111;">Quicklet</h3>
+                                        <p style="font-size: 1.5rem; color: #555; line-height: 1.7; margin-bottom: 2.5rem;">
+                                            Premium shortlet booking engine with integrated payment processing and automated reservation management.
+                                        </p>
+                                        
+                                        <div style="margin-top: auto;">
+                                            <div style="display: flex; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap;">
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">Flask</span>
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">PostgreSQL</span>
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">REST APIs</span>
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">Paystack</span>
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">JWT</span>
+                                            </div>
+                                            <a href="https://quicklet.pythonanywhere.com/" target="_blank" style="text-decoration: none; font-weight: 700; color: #000; font-size: 1.4rem; border-bottom: 2px solid #000; padding-bottom: 2px;">View Project ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="project-card-wrapper">
+                                <div style="background: #ffffff; border-radius: 20px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid #eee; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-15px)'" onmouseout="this.style.transform='translateY(0)'">
+                                    
+                                    <div style="height: 240px; position: relative; overflow: hidden;">
+                                        <img src="{{url_for('static', filename='images/jx.jpg')}}" alt="JoyXpress" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); color: white; padding: 5px 12px; border-radius: 50px; font-size: 1.1rem; font-weight: 600;">Logistics</div>
+                                    </div>
+                
+                                    <div style="padding: 3rem; flex-grow: 1; display: flex; flex-direction: column;">
+                                        <h3 style="margin: 0 0 1.5rem 0; font-size: 2.2rem; color: #111;">JoyXpress</h3>
+                                        <p style="font-size: 1.5rem; color: #555; line-height: 1.7; margin-bottom: 2.5rem;">
+                                            End-to-end logistics platform featuring real-time package tracking, route optimization, and delivery analytics.
+                                        </p>
+                                        
+                                        <div style="margin-top: auto;">
+                                            <div style="display: flex; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap;">
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">Python</span>
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">REST APIs</span>
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">MongoDB</span>
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">Paystack</span>
+                                            </div>
+                                            <a href="https://joyxpress.pythonanywhere.com/" target="_blank" style="text-decoration: none; font-weight: 700; color: #000; font-size: 1.4rem; border-bottom: 2px solid #000; padding-bottom: 2px;">View Project ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="project-card-wrapper">
+                                <div style="background: #ffffff; border-radius: 20px; overflow: hidden; height: 100%; display: flex; flex-direction: column; border: 1px solid #eee; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0,0,0,0.05);" onmouseover="this.style.transform='translateY(-15px)'" onmouseout="this.style.transform='translateY(0)'">
+                                    
+                                    <div style="height: 240px; position: relative; overflow: hidden;">
+                                        <img src="{{url_for('static', filename='images/tcg.jpg')}}" alt="TCG" style="width: 100%; height: 100%; object-fit: cover;">
+                                        <div style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); color: white; padding: 5px 12px; border-radius: 50px; font-size: 1.1rem; font-weight: 600;">Corporate</div>
+                                    </div>
+                
+                                    <div style="padding: 3rem; flex-grow: 1; display: flex; flex-direction: column;">
+                                        <h3 style="margin: 0 0 1.5rem 0; font-size: 2.2rem; color: #111;">TCG Group</h3>
+                                        <p style="font-size: 1.5rem; color: #555; line-height: 1.7; margin-bottom: 2.5rem;">
+                                            A professional corporate presence for Tomide Construction featuring a custom quote generation engine.
+                                        </p>
+                                        
+                                        <div style="margin-top: auto;">
+                                            <div style="display: flex; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap;">
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">Flask</span>
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">Flask-Mail</span>
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">UI/UX</span>
+                                                <span style="font-size: 1.1rem; background: #f0f0f0; padding: 4px 10px; border-radius: 4px; color: #666;">SEO</span>
+                                            </div>
+                                            <a href="https://tomidecg.pythonanywhere.com/" target="_blank" style="text-decoration: none; font-weight: 700; color: #000; font-size: 1.4rem; border-bottom: 2px solid #000; padding-bottom: 2px;">View Project ↗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                        </div> </div>
+                </div> <!-- end s-expertise__content -->
 
+            </section> <!-- end s-expertise -->
 
+            <!-- clients
+            ----------------------------------------------- -->
+            <section id="clients" class="s-clients">          
 
-     </ul>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h2 class="mb-4"> Send A Message (DM)  </h2>
-<form> 
-<div class="mb-3"> 
-<label  class="form-label"> Name</label>
-<input class="form-control" type="text" placeholder="Your Name "> 
+                <div class="row width-sixteen-col" id="faq">
+                    <div class="column xl-12 grid-block grid-section-split">
+            
+                        <div class="section-header grid-section-split__header">
+                            <div class="text-pretitle" >Common Questions</div>
+                            <h2 class="text-display-title">Working with me.</h2>
+                            <p class="lead">
+                                I believe in transparency and clear communication. Here are some things clients and employers usually ask about my process.
+                            </p>
+                            <a href="mailto:yourname@email.com" class="btn btn--stroke u-fullwidth" style="margin-top: 2rem;">Still have questions?</a>
+                        </div> <div class="grid-section-split__primary">
+                            
+                            <div class="faq-list" >
 
-</div>
-<div class="mb-3"> 
-<label class="form-label"> Type Here </label> <br> 
-<textarea name="bio" id="bio" class="texta1"></textarea>
+                                <details style="margin-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2rem; cursor: pointer;">
+                                    <summary style="font-family: var(--font-1); font-weight: 600; font-size: 1.9rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #000;">
+                                        What is your typical development process?
+                                        <span style="font-size: 2rem; color: #555;">+</span>
+                                    </summary>
+                                    <p style="margin-top: 1.5rem; font-size: 1.6rem; line-height: 1.8; color: #555;">
+                                        I follow a structured approach: Discovery (understanding your needs), Design (wireframing and UI), Development (building with clean code), and Deployment (testing and going live). I prefer agile iterations to ensure we are always on the same page.
+                                    </p>
+                                </details>
+                            
+                                <details style="margin-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2rem; cursor: pointer;">
+                                    <summary style="font-family: var(--font-1); font-weight: 600; font-size: 1.9rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #000;">
+                                        Which technologies do you specialize in?
+                                        <span style="font-size: 2rem; color: #555;">+</span>
+                                    </summary>
+                                    <p style="margin-top: 1.5rem; font-size: 1.6rem; line-height: 1.8; color: #555;">
+                                        My core expertise is in Python (Flask/Django) for backend logic, integrated with clean HTML/CSS/JS for the frontend. I also have experience managing logistics databases and construction quote engines, as seen in my featured projects.
+                                    </p>
+                                </details>
+                            
+                                <details style="margin-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2rem; cursor: pointer;">
+                                    <summary style="font-family: var(--font-1); font-weight: 600; font-size: 1.9rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #000;">
+                                        Can you match my specific brand style and colors?
+                                        <span style="font-size: 2rem; color: #555;">+</span>
+                                    </summary>
+                                    <p style="margin-top: 1.5rem; font-size: 1.6rem; line-height: 1.8; color: #555;">
+                                        Yes. I take pride in creating bespoke designs that align perfectly with your existing brand identity. Whether you have a strict style guide or just a logo, I will ensure the UI reflects your brand's personality.
+                                    </p>
+                                </details>
+                            
+                                <details style="margin-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2rem; cursor: pointer;">
+                                    <summary style="font-family: var(--font-1); font-weight: 600; font-size: 1.9rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #000;">
+                                        Are you available for freelance or full-time roles?
+                                        <span style="font-size: 2rem; color: #555;">+</span>
+                                    </summary>
+                                    <p style="margin-top: 1.5rem; font-size: 1.6rem; line-height: 1.8; color: #555;">
+                                        I am currently open to both! Whether you need a one-off logistics solution or a dedicated developer to join your engineering team, I'm happy to discuss how I can contribute.
+                                    </p>
+                                </details>
+                            
+                                <details style="margin-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2rem; cursor: pointer;">
+                                    <summary style="font-family: var(--font-1); font-weight: 600; font-size: 1.9rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #000;">
+                                        Will the website work on all browsers and devices?
+                                        <span style="font-size: 2rem; color: #555;">+</span>
+                                    </summary>
+                                    <p style="margin-top: 1.5rem; font-size: 1.6rem; line-height: 1.8; color: #555;">
+                                        Absolutely. Every project I develop from logistics systems like JoyXpress to booking apps like Quicklet is built with a "mobile-first" approach. I ensure full compatibility across Chrome, Safari, Firefox, and Edge.
+                                    </p>
+                                </details>
+                            
+                                <details style="margin-bottom: 2rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 2rem; cursor: pointer;">
+                                    <summary style="font-family: var(--font-1); font-weight: 600; font-size: 1.9rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #000;">
+                                        What are your accepted modes of payment?
+                                        <span style="font-size: 2rem; color: #555;">+</span>
+                                    </summary>
+                                    <p style="margin-top: 1.5rem; font-size: 1.6rem; line-height: 1.8; color: #555;">
+                                        I offer flexible payment options to suit international clients, including <strong>Bank Transfer, PayPal, Zelle, and Crypto</strong>. We can discuss the most convenient method during our initial consultation.
+                                    </p>
+                                </details>
+                            
+                            </div> </div> </div> </div>
 
+            </section> <!-- end s-clients -->            
 
- </div> 
+        </section> <!-- s-content-->
 
+        <!-- # cta
+        ================================================== -->
+        <section id="cta" class="s-cta">
 
-<button class="btn btn-primary col-md-12"> Send </button>
-      </div>
-      <div class="modal-footer">
+            <div class="row row-x-center text-center">
+                <div class="column xl-8 lg-12">
+                    <div class="s-cta__content">
+                        
+                        <span style="display: block; font-family: var(--font-1); font-weight: 700; font-size: 1.4rem; text-transform: uppercase; letter-spacing: .3rem; color: white; margin-bottom: 1.5rem;">
+                            Get Started
+                        </span>
+            
+                        <h2 class="text-display-title">Let’s build something great together.</h2>
+                        
+                        <p class="lead" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+                            I am currently accepting new projects and collaboration opportunities. 
+                            Whether you’re looking to scale a system like JoyXpress or launch a fresh concept, 
+                            send a message below. I prioritize clear communication and typically respond within an hour.
+                        </p>
+            
+                    </div>
+                </div>
+            </div>
         
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
-      </div>
-    </div>
-  </div>
-</div>
+            <div class="row row-x-center" style="margin-top: 5rem;">
+                <div class="column xl-6 lg-10 m-12">
+        
+                    <form method="POST" action="{{ url_for('contact') }}" novalidate style="background: #ffffff; padding: 3rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.02);" id="contact">
+                        {{ contact.csrf_token }}
+                    
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div class="form-field">
+                                <label style="font-weight: 600; font-size: 1.3rem; color: #333; margin-bottom: 0.8rem; display: block;">{{ contact.name.label }}</label>
+                                {{ contact.name(style="width: 100%; padding: 1.2rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1.4rem;", placeholder="Full Name") }}
+                            </div>
+            
+                            <div class="form-field">
+                                <label style="font-weight: 600; font-size: 1.3rem; color: #333; margin-bottom: 0.8rem; display: block;">{{ contact.email.label }}</label>
+                                {{ contact.email(style="width: 100%; padding: 1.2rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1.4rem;", placeholder="Email Address") }}
+                            </div>
+                        </div>
+            
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="font-weight: 600; font-size: 1.3rem; color: #333; margin-bottom: 0.8rem; display: block;">{{ contact.phone.label }}</label>
+                            {{ contact.phone(style="width: 100%; padding: 1.2rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1.4rem;", placeholder="Phone Number") }}
+                        </div>
+            
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="font-weight: 600; font-size: 1.3rem; color: #333; margin-bottom: 0.8rem; display: block;">{{ contact.message.label }}</label>
+                            {{ contact.message(style="width: 100%; padding: 1.2rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1.4rem; min-height: 100px;", placeholder="Your Message...") }}
+                        </div>
+            
+                        <div style="margin-bottom: 2.5rem; background: #fdfdfd; padding: 1.5rem; border-radius: 8px; border: 1px dashed #ddd;">
+                            <label style="font-weight: 600; font-size: 1.3rem; color: #333; margin-bottom: 1.2rem; display: block;">{{ contact.contact_method.label }}</label>
+                            
+                            <div style="display: flex; gap: 2.5rem; flex-wrap: wrap;">
+                                {% for subfield in contact.contact_method %}
+                                    <label style="display: inline-flex; align-items: center; margin: 0; cursor: pointer; font-weight: normal;">
+                                        {{ subfield(style="margin: 0 8px 0 0; padding: 0; width: 18px; height: 18px; flex-shrink: 0; appearance: auto; -webkit-appearance: radio;") }}
+                                        
+                                        <span style="font-size: 1.4rem; color: #555; line-height: 1; display: inline-block;">
+                                            {{ subfield.label.text }}
+                                        </span>
+                                    </label>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            {{ contact.submit(class="btn btn--primary u-fullwidth", style="height: 5.4rem; line-height: 5.4rem;") }}
+                        </div>
+                    </form>
+            
+                </div>
+            </div>
+
+        </section> <!-- end s-cta -->
+
+        <!-- # journal
+        ================================================== -->
 
 
-<script src="bootstrap/js/bootstrap.bundle.js"></script>
+
+        <!-- # footer 
+        ================================================== -->
+        <footer class="s-footer">
+            <div class="row s-footer__content">
+        
+                <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">                    
+                    <h3 class="text-pretitle">About Tomide</h3>
+                    <p>
+                        I am a Software Developer dedicated to building scalable web applications and solving complex problems with clean, efficient code. 
+                        With a focus on Python and modern web technologies, I help turn ideas into functional digital reality.
+                    </p>               
+                </div>                
+        
+                <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
+                    <h3 class="text-pretitle">Navigation</h3>
+                    <ul class="link-list">
+                        <li><a href="#top">Back to Top</a></li>
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#project">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+        
+                <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__contact">
+                    <h3 class="text-pretitle">Get In Touch</h3>
+                    <p>
+                        Looking for a developer to help with your next project? Let's discuss how I can add value.
+                    </p>
+                    <a href="mailto:michealerinola9@gmail.com" class="btn btn--primary u-fullwidth">Send an Email</a>
+                </div>
+        
+            </div>             <div class="row s-footer__bottom">
+                <div class="column xl-6 lg-12">
+                    <ul class="s-footer__social social-list">
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
+                                <span class="u-screen-reader-text">Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
+                                <span class="u-screen-reader-text">Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
+                                <span class="u-screen-reader-text">Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20.66 6.98a9.932 9.932 0 0 0-3.641-3.64C15.486 2.447 13.813 2 12 2s-3.486.447-5.02 1.34c-1.533.893-2.747 2.107-3.64 3.64S2 10.187 2 12s.446 3.487 1.34 5.02a9.924 9.924 0 0 0 3.641 3.64C8.514 21.553 10.187 22 12 22s3.486-.447 5.02-1.34a9.932 9.932 0 0 0 3.641-3.64C21.554 15.487 22 13.813 22 12s-.446-3.487-1.34-5.02zM12 3.66c2 0 3.772.64 5.32 1.919-.92 1.174-2.286 2.14-4.1 2.9-1.002-1.813-2.088-3.327-3.261-4.54A7.715 7.715 0 0 1 12 3.66zM5.51 6.8a8.116 8.116 0 0 1 2.711-2.22c1.212 1.201 2.325 2.7 3.34 4.5-2 .6-4.114.9-6.341.9-.573 0-1.006-.013-1.3-.04A8.549 8.549 0 0 1 5.51 6.8zM3.66 12c0-.054.003-.12.01-.2.007-.08.01-.146.01-.2.254.014.641.02 1.161.02 2.666 0 5.146-.367 7.439-1.1.187.373.381.793.58 1.26-1.32.293-2.674 1.006-4.061 2.14S6.4 16.247 5.76 17.5c-1.4-1.587-2.1-3.42-2.1-5.5zM12 20.34c-1.894 0-3.594-.587-5.101-1.759.601-1.187 1.524-2.322 2.771-3.401 1.246-1.08 2.483-1.753 3.71-2.02a29.441 29.441 0 0 1 1.56 6.62 8.166 8.166 0 0 1-2.94.56zm7.08-3.96a8.351 8.351 0 0 1-2.58 2.621c-.24-2.08-.7-4.107-1.379-6.081.932-.066 1.765-.1 2.5-.1.799 0 1.686.034 2.659.1a8.098 8.098 0 0 1-1.2 3.46zm-1.24-5c-1.16 0-2.233.047-3.22.14a27.053 27.053 0 0 0-.68-1.62c2.066-.906 3.532-2.006 4.399-3.3 1.2 1.414 1.854 3.027 1.96 4.84-.812-.04-1.632-.06-2.459-.06z"></path></svg>
+                                <span class="u-screen-reader-text">Dribbble</span>
+                            </a>
+                        </li>
+                    </ul> <!-- end s-footer__social -->
+                </div>
+                <div class="column xl-6 lg-12">
+                    <p class="ss-copyright ">
+                        <span>© 2026 Tomide Erinola</span> 
+                        <span>Built with Python & Passion</span>
+                    </p>
+                </div>
+        
+
+                <div class="ss-go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">&lt;!--!  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;<polyline points="17 11 12 6 7 11"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
+                    </a>
+                </div> <!-- end ss-go-top -->
+            </div>
+             </footer>
+         <!-- end s-footer -->
+
+
+        <!-- <div id="contactModal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 20px;">
+    
+            <div style="background: white; width: 100%; max-width: 900px; border-radius: 20px; overflow: hidden; display: flex; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+                
+                <button onclick="toggleModal()" style="position: absolute; right: 15px; top: 10px; background: none; border: none; font-size: 30px; cursor: pointer; color: #333; z-index: 10;">&times;</button>
+        
+                <div style="background: #111; color: white; padding: 4rem; width: 35%; display: flex; flex-direction: column; justify-content: center;" class="modal-sidebar">
+                    <h3 style="color: white; margin-bottom: 2rem; font-size: 2.4rem;">Let's Connect</h3>
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+    
+                        <a href="https://github.com/Tomideerinola" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 1.5rem; font-size: 1.6rem; transition: opacity 0.3s;">
+                            <span style="background: #24292e; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                                <i class="fa-brands fa-github"></i>
+                            </span> 
+                            <span>GitHub <small style="opacity: 0.5; font-size: 1rem; display: block;">Code & Repos</small></span>
+                        </a>
+                    
+                        <a href="https://x.com/Tomide1604" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 1.5rem; font-size: 1.6rem; transition: opacity 0.3s;">
+                            <span style="background: #000000; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; border: 1px solid #333;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M12.685 5.872 15.466 2.69h-2.38L10.51 5.37 8.357 2.69H2.1l2.912 4.144-2.912 3.32h2.38l2.36-2.69 2.298 2.69h6.257L12.684 5.872ZM10.22 8.761l-.396-.563-3.614-5.143h1.83l2.843 4.047.396.564 3.791 5.399h-1.83l-3.05-4.346Z"/>
+                                </svg>
+                            </span> 
+                            <span>Twitter / X <small style="opacity: 0.5; font-size: 1rem; display: block;">Latest Updates</small></span>
+                        </a>
+                    
+                        <a href="https://facebook.com/yourusername" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 1.5rem; font-size: 1.6rem; transition: opacity 0.3s;">
+                            <span style="background: #1877F2; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </span> 
+                            <span>Facebook <small style="opacity: 0.5; font-size: 1rem; display: block;">Direct Contact</small></span>
+                        </a>
+                    
+                    </div>
+                </div>
+        
+                <div style="padding: 4rem; width: 65%; background: white;" class="modal-form-side">
+                    
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                      {% if messages %}
+                        {% for category, message in messages %}
+                          <div style="background: #e6fffa; color: #234e52; padding: 1.5rem; border-radius: 8px; border: 1px solid #b2f5ea; margin-bottom: 2rem; font-size: 1.4rem;">
+                              {{ message }}
+                          </div>
+                        {% endfor %}
+                      {% endif %}
+                    {% endwith %}
+        
+                    <h4 style="margin-bottom: 2rem; font-size: 2rem;">Send a Message</h4>
+        
+                    <form method="POST" action="{{ url_for('contact') }}" novalidate>
+                        {{ contact.csrf_token }}
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div class="form-field">
+                                <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.name.label }}</label>
+                                {{ contact.name(style="width: 100%; padding: 1.2rem; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9;", placeholder="Your Name") }}
+                            </div>
+                            <div class="form-field">
+                                <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.email.label }}</label>
+                                {{ contact.email(style="width: 100%; padding: 1.2rem; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9;", placeholder="Email Address") }}
+                            </div>
+                        </div>
+        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.phone.label }}</label>
+                            {{ contact.phone(style="width: 100%; padding: 1.2rem; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9;", placeholder="Phone Number") }}
+                        </div>
+        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.message.label }}</label>
+                            {{ contact.message(style="width: 100%; padding: 1.2rem; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9; min-height: 80px;", placeholder="How can I help you?") }}
+                        </div>
+        
+                        <div style="margin-bottom: 2rem;">
+                            <label style="font-size: 1.2rem; font-weight: 600; display: block; margin-bottom: 1rem;">{{ contact.contact_method.label }}</label>
+                            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                                {% for subfield in contact.contact_method %}
+                                    <label style="display: inline-flex; align-items: center; font-size: 1.3rem; cursor: pointer; margin: 0; font-weight: 400;">
+                                        {{ subfield(style="margin-right: 8px; width: 16px; height: 16px; flex-shrink: 0;") }}
+                                        {{ subfield.label.text }}
+                                    </label>
+                                {% endfor %}
+                            </div>
+                        </div>
+        
+                        {{ contact.submit(class="btn btn--primary u-fullwidth", style="height: 50px; line-height: 50px;") }}
+                    </form>
+                </div>
+            </div>
+        </div> -->
+
+        <div id="contactModal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 20px; overflow-y: auto; -webkit-overflow-scrolling: touch;">
+    
+            <div style="background: white; width: 100%; max-width: 900px; border-radius: 20px; overflow: hidden; display: flex; position: relative; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); margin: auto;" class="modal-box">
+                
+                <button onclick="toggleModal()" style="position: absolute; right: 15px; top: 10px; background: none; border: none; font-size: 30px; cursor: pointer; color: #333; z-index: 10;">&times;</button>
+        
+                <div style="background: #111; color: white; padding: 4rem; width: 35%; display: flex; flex-direction: column; justify-content: center;" class="modal-sidebar">
+                    <h3 style="color: white; margin-bottom: 2rem; font-size: 2.4rem;">Let's Connect</h3>
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+        
+                        <a href="https://github.com/Tomideerinola" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 1.5rem; font-size: 1.6rem; transition: opacity 0.3s;">
+                            <span style="background: #24292e; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                                <i class="fa-brands fa-github"></i>
+                            </span> 
+                            <span>GitHub <small style="opacity: 0.5; font-size: 1rem; display: block;">Code & Repos</small></span>
+                        </a>
+                    
+                        <a href="https://x.com/Tomide1604" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 1.5rem; font-size: 1.6rem; transition: opacity 0.3s;">
+                            <span style="background: #000000; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; border: 1px solid #333;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M12.685 5.872 15.466 2.69h-2.38L10.51 5.37 8.357 2.69H2.1l2.912 4.144-2.912 3.32h2.38l2.36-2.69 2.298 2.69h6.257L12.684 5.872ZM10.22 8.761l-.396-.563-3.614-5.143h1.83l2.843 4.047.396.564 3.791 5.399h-1.83l-3.05-4.346Z"/>
+                                </svg>
+                            </span> 
+                            <span>Twitter / X <small style="opacity: 0.5; font-size: 1rem; display: block;">Latest Updates</small></span>
+                        </a>
+                    
+                        <a href="https://facebook.com/yourusername" target="_blank" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 1.5rem; font-size: 1.6rem; transition: opacity 0.3s;">
+                            <span style="background: #1877F2; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </span> 
+                            <span>Facebook <small style="opacity: 0.5; font-size: 1rem; display: block;">Direct Contact</small></span>
+                        </a>
+                    
+                    </div>
+                </div>
+        
+                <div style="padding: 4rem; width: 65%; background: white;" class="modal-form-side">
+                    
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                      {% if messages %}
+                        {% for category, message in messages %}
+                          <div style="background: #e6fffa; color: #234e52; padding: 1.5rem; border-radius: 8px; border: 1px solid #b2f5ea; margin-bottom: 2rem; font-size: 1.4rem;">
+                              {{ message }}
+                          </div>
+                        {% endfor %}
+                      {% endif %}
+                    {% endwith %}
+        
+                    <h4 style="margin-bottom: 2rem; font-size: 2rem;">Send a Message</h4>
+        
+                    <form method="POST" action="{{ url_for('contact') }}" novalidate>
+                        {{ contact.csrf_token }}
+                        
+                        <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div class="form-field">
+                                <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.name.label }}</label>
+                                {{ contact.name(style="width: 100%; padding: 1.2rem; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9;", placeholder="Your Name") }}
+                            </div>
+                            <div class="form-field">
+                                <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.email.label }}</label>
+                                {{ contact.email(style="width: 100%; padding: 1.2rem; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9;", placeholder="Email Address") }}
+                            </div>
+                        </div>
+        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.phone.label }}</label>
+                            {{ contact.phone(style="width: 100%; padding: 1.2rem; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9;", placeholder="Phone Number") }}
+                        </div>
+        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; display: block;">{{ contact.message.label }}</label>
+                            {{ contact.message(style="width: 100%; padding: 1.2rem; border: 1px solid #eee; border-radius: 8px; background: #f9f9f9; min-height: 80px;", placeholder="How can I help you?") }}
+                        </div>
+        
+                        <div style="margin-bottom: 2rem;">
+                            <label style="font-size: 1.2rem; font-weight: 600; display: block; margin-bottom: 1rem;">{{ contact.contact_method.label }}</label>
+                            <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                                {% for subfield in contact.contact_method %}
+                                    <label style="display: inline-flex; align-items: center; font-size: 1.3rem; cursor: pointer; margin: 0; font-weight: 400;">
+                                        {{ subfield(style="margin-right: 8px; width: 16px; height: 16px; flex-shrink: 0;") }}
+                                        {{ subfield.label.text }}
+                                    </label>
+                                {% endfor %}
+                            </div>
+                        </div>
+        
+                        {{ contact.submit(class="btn btn--primary u-fullwidth", style="height: 50px; line-height: 50px;") }}
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!-- end page-wrap -->
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="{{url_for('static', filename='js/plugins.js')}}"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    <script>
+function toggleModal() {
+    const modal = document.getElementById('contactModal');
+    if (modal.style.display === 'none' || modal.style.display === '') {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+    } else {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable background scrolling
+    }
+}
+        
+        // Close modal if clicking outside the white box
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target == modal) { toggleModal(); }
+        }
+        </script>
 </body>
 </html>
