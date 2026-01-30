@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #FFF9F9; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0;
+        }
+        .login-card {
+            background: #fff;
+            padding: 4rem;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(212, 165, 165, 0.15);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h2 { color: #4A3E3E; margin-bottom: 2rem; }
+        input {
+            width: 100%;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid #F0E6E6;
+            background: #FFFBFB;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 1.5rem;
+            background: #5F4B4B;
+            color: white;
+            border: none;
+            border-radius: 100px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: #D4A5A5; }
+        .error-msg { color: #D68D9A; font-size: 14px; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <h2>Tomide's Access</h2>
+    
+    {% with messages = get_flashed_messages(category_filter=["error"]) %}
+      {% if messages %}
+        {% for message in messages %}
+          <p class="error-msg">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Enter Dashboard</button>
+    </form>
+    <br>
+    <a href="/" style="color: #B0A1A1; text-decoration: none; font-size: 12px;">Return to Website</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Project Inquiries</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #FFF9F9; color: #4A3E3E; padding: 40px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        
+        table { width: 100%; border-collapse: separate; border-spacing: 0 15px; }
+        th { text-align: left; padding: 15px 25px; color: #D4A5A5; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; }
+        
+        tr.msg-row { background: #fff; box-shadow: 0 5px 15px rgba(212, 165, 165, 0.1); transition: 0.3s; }
+        tr.msg-row:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(212, 165, 165, 0.15); }
+        
+        td { padding: 25px; border-radius: 0; }
+        td:first-child { border-radius: 20px 0 0 20px; }
+        td:last-child { border-radius: 0 20px 20px 0; text-align: right; }
+
+        .badge { padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+        .unattended { background: #FFF0F2; color: #D68D9A; }
+        .attended { background: #F0FFF4; color: #8DD6A6; }
+        
+        .btn-action { text-decoration: none; color: #5F4B4B; font-weight: 600; font-size: 13px; border: 1px solid #EBD5CC; padding: 8px 16px; border-radius: 10px; transition: 0.3s; }
+        .btn-action:hover { background: #5F4B4B; color: #fff; }
+        
+        .message-text { max-width: 300px; font-size: 14px; color: #666; line-height: 1.5; }
+        .date { font-size: 13px; color: #B0A1A1; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Inbox <span style="color: #D4A5A5; font-weight: 300;">{{messages|length}}</span></h1>
+        <a href="/" style="color: #8E7C77; text-decoration: none; font-size: 14px;">&larr; Back to Site</a>
+        <a href="/logout" style="color: #D68D9A; text-decoration: none; font-weight: bold;">Logout</a>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sender</th>
+                <th>Contact Info</th>
+                <th>Project Message</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for msg in messages %}
+            <tr class="msg-row">
+                <td>
+                    <strong>{{ msg.name }}</strong><br>
+                    <span class="date">{{ msg.date_sent.strftime('%b %d, %Y') }}</span>
+                </td>
+                <td>
+                    <span style="font-size: 14px;">{{ msg.email }}</span><br>
+                    <span style="font-size: 12px; color: #8E7C77;">via {{ msg.contact_method }}</span>
+                </td>
+                <td>
+                    <div class="message-text">{{ msg.message }}</div>
+                </td>
+                <td>
+                    <span class="badge {{ msg.contact_status }}">{{ msg.contact_status }}</span>
+                </td>
+                <td>
+                    {% if msg.contact_status == 'unattended' %}
+                    <a href="{{ url_for('mark_read', id=msg.id) }}" class="btn-action">Mark Attended</a>
+                    {% else %}
+                    <span style="color: #8DD6A6; font-size: 18px;">&check;</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
